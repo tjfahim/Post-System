@@ -27,13 +27,13 @@ Route::get('/posts', [PostControllerApi::class, 'index']);
 Route::get('/posts/{id}', [PostControllerApi::class, 'show']);
 
 Route::middleware('auth:api')->group(function () {
-    Route::post('/post', [PostControllerApi::class, 'store']);
+    Route::post('/post', [PostControllerApi::class, 'store']);//multiple images field name is images[]
     Route::put('/post/{id}', [PostControllerApi::class, 'update']);
     Route::delete('/post/{id}', [PostControllerApi::class, 'destroy']);
 
     Route::post('/post/{post}/like', [LikeCommentApi::class, 'like']);
 
-    Route::post('/post/{post}/comments', [LikeCommentApi::class, 'store']);
+    Route::post('/post/{post}/comment', [LikeCommentApi::class, 'store']);
     Route::put('/comment/{comment}', [LikeCommentApi::class, 'update']);
     Route::delete('/comment/{comment}', [LikeCommentApi::class, 'destroy']);
     Route::post('/post/{post}/comment/{comment}/approve', [LikeCommentApi::class, 'approve']);

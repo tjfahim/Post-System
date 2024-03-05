@@ -44,6 +44,8 @@ class PostControllerApi extends Controller
         $post->description = $request->description;
         $post->save();
 
+//multiple images field name is images[]
+
         if($request->hasFile("images")){
             $files=$request->file("images");
             foreach($files as $file){

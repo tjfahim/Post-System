@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 1; $i < 5; $i++) {
             DB::table('users')->insert([
                 'name' => 'User'.$i,
                 'email' => 'user'.$i.'@user.com',
